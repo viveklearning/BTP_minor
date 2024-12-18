@@ -34,7 +34,7 @@ while True:
 
         # Determine the dominant emotion
         emotion = result[0]['dominant_emotion']
-        print(emotion)
+        # print(emotion)
         # Draw rectangle around face and label with predicted emotion
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
         cv2.putText(frame, emotion, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)

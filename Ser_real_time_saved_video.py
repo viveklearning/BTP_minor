@@ -183,9 +183,9 @@ def extract_feature(file_name, mfcc, chroma, mel):
 #         print("No features extracted from the audio file.")
 
 # Predict on pre-recorded audio
-def predictAudio():
+def predictAudio(file="record_happy_sad.wav"):
     # file = input("Please enter path to your file.\n")
-    file="record_happy_sad.wav"
+    # file="record_happy_sad.wav"
     x_predictAudio = []
     featurePredictAudio = extract_feature(file, mfcc=True, chroma=True, mel=True)  # Extract features of recorded audio
     x_predictAudio.append(featurePredictAudio)
@@ -197,17 +197,18 @@ def predictAudio():
     else:
         print("No features extracted from the audio file.")
 
-# Main menu
-while True:
-    choice = int(input("Enter 1 to create and train model. \nEnter 2 to record and predict audio. \nEnter 3 to predict on pre-recorded audio. \nEnter 4 to quit. \n"))
-    if choice == 1:
-        trainModel()
-    elif choice == 2:
-        record_predictAudio()
-    elif choice == 3:
-        predictAudio()
-    elif choice == 4:
-        print("Exiting the program.")
-        break
-    else:
-        print("Invalid choice. Please try again.")
+# # Main menu
+# while True:
+#     choice = int(input("Enter 1 to create and train model. \nEnter 2 to record and predict audio. \nEnter 3 to predict on pre-recorded audio. \nEnter 4 to quit. \n"))
+#     if choice == 1:
+#         trainModel()
+#     elif choice == 2:
+#         record_predictAudio()
+#     elif choice == 3:
+#         predictAudio()
+#     elif choice == 4:
+#         print("Exiting the program.")
+#         break
+#     else:
+#         print("Invalid choice. Please try again.")
+predictAudio('record_sad_happy.wav')
